@@ -7,7 +7,7 @@ const Container = styled.div`
   display: flex;
 `
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 10px 50px;
   display: flex;
   justify-content: space-between; 
   width: 100%;
@@ -51,7 +51,7 @@ const InputBox = styled.input`
 `
 const MenuItem = styled.div`
   font-size: 1.3rem;
-  margin-left: 10px;
+  margin-left: 30px;
   cursor: pointer;
   font-weight: 500;
 `
