@@ -2,13 +2,16 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Container = styled.div`
-    height: 60vh;
+    min-height: 50vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #fffff3;
+    background-color: #ffffe6;
+    @media screen and (max-width: 400px) {
+       padding: 20px;
+    }
 `
 const Text = styled.h1`
     font-size: 3.4rem;
@@ -23,6 +26,9 @@ const InputContainer = styled.div`
     width: 45%;
     height: 40px;
     display: flex;
+    @media screen and (max-width: 400px) {
+        
+    }
 `
 const Input = styled.input`
     flex: 8;
