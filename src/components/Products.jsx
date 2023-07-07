@@ -6,12 +6,17 @@ const Container = styled.div`
   padding: 50px 100px;
   height: auto;
   width: 100%;
-  background-color: #e7f8ff;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   row-gap: 20px;
+  @media screen and (max-width: 400px) {
+       flex-direction: column;
+       padding: 20px;
+       align-items: center;
+    }
 `
+
 function Products() {
   return(
   <Container>
