@@ -6,7 +6,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import payment from '../images/payment.png'
 const Container = styled.div`
-    height: 50vh;
+    min-height: 50vh;
     width: 100%;
     background-color: #1a1a1a;
     padding: 40px;
@@ -15,6 +15,10 @@ const Container = styled.div`
     color: white;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    @media screen and (max-width: 400px) {
+       flex-direction: column;
+    }
 `
 const Left = styled.div`
     flex:1;
@@ -27,6 +31,12 @@ const Desc = styled.p`
 `
 const Center = styled.div`
     flex:1;
+    @media screen and (max-width: 400px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 `
 const Text = styled.h4`
     
@@ -40,12 +50,19 @@ const List = styled.div`
 const ListItem = styled.li`
     list-style: none;
     cursor: pointer;
+
+    &:hover{
+        color: #00ffd5;
+    }
 `
 const Right = styled.div`
     flex: 1;
     display: flex;
     gap: 10px;
     flex-direction: column;
+    @media screen and (max-width: 400px) {
+       align-items: center;
+    }
 `
 
 const Icons = styled.div`
@@ -54,11 +71,14 @@ const Icons = styled.div`
 `
 const Icon = styled.div`
     cursor: pointer;
+    &:hover{
+        color: ${props=>props.color};
+        
+    }
 `
 const Image = styled.img`
-    width: 200px;
+    width: 50%;
 `
-
 function Footer() {
     return (
         <Container>
@@ -66,10 +86,10 @@ function Footer() {
                 <Logo>PARA.</Logo>
                 <Desc>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, iusto modi neque earum perspiciatis nihil porro atque, officiis dolorem tempora totam quae exercitationem ab excepturi et rerum temporibus nisi provident accusamus, architecto veritatis? Hic eos libero, quae praesentium ipsam laudantium repudiandae consequuntur modi accusantium quidem consectetur, minima provident asperiores sit.</Desc>
                 <Icons>
-                    <Icon><FacebookIcon /></Icon>
-                    <Icon><InstagramIcon /></Icon>
-                    <Icon><TwitterIcon /></Icon>
-                    <Icon><PinterestIcon /></Icon>
+                    <Icon color='#3b5998'><FacebookIcon /></Icon>
+                    <Icon color='#d62976'><InstagramIcon /></Icon>
+                    <Icon color='#00acee'><TwitterIcon /></Icon>
+                    <Icon color='#c8232c'><PinterestIcon /></Icon>
                 </Icons>
             </Left>
             <Center>
