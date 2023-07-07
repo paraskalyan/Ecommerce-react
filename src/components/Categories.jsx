@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 import shirt from '../images/shirt.jpg'
 const Container = styled.div`
-    height: 90vh;
+    /* height: 90vh; */
+    max-height: fit-content;
 `
 const Wrapper = styled.div`
     padding: 40px 60px;
@@ -12,18 +13,24 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-evenly;
     position: relative;
+    @media screen and (max-width: 400px) {
+       flex-direction: column;
+       gap: 30px;
+    }
 `
 const Card = styled.div`
     background-size: cover;
     height: 400px;
     width: 25%;
-    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     padding: 15px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    @media screen and (max-width: 400px) {
+       width: 80%;
+    }
 
 `
 const Text = styled.h1`
