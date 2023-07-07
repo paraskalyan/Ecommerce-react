@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 const Container = styled.div`
-  height: 80px;
+  height: 7vh;
   display: flex;
 `
 const Wrapper = styled.div`
@@ -12,6 +13,9 @@ const Wrapper = styled.div`
   justify-content: space-between; 
   width: 100%;
   align-items: center;
+  @media screen and (max-width: 450px) {
+       padding: 10px;  
+    }
 `
 
 const Left = styled.div`
@@ -27,36 +31,47 @@ const Center = styled.div`
 const Right = styled.div`
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
 ` 
 const Logo = styled.h1`
  font-weight: 900;
- font-size: 2.5rem;
+ font-size: 1.5rem;
 `
 const Language = styled.span`
-  font-size: 1.2rem;
+  font-size: 14px;
   cursor: pointer;
 `
 const SearchBox = styled.div`
-  padding: 5px;
+  padding: 3px;
   background-color: #fff;
   border: 1px solid #d3d3d3;
-  width: 270px;
+  width: 190px;
   margin-left: 15px;
+  @media screen and (max-width: 450px) {
+       display: none;
+    }
 `
 const InputBox = styled.input`
-  font-size: 1.3rem;
+  font-size: 14px;
   border: none;
   outline: none;
 `
 const MenuItem = styled.div`
-  font-size: 1.3rem;
+  font-size: 14px;
   margin-left: 30px;
   cursor: pointer;
   font-weight: 500;
+  cursor: pointer;
+  &:hover{
+    color: #015346;
+  }
 `
 
 function Navbar() {
+  const linkStyle = {
+    "text-decoration": "none",
+    "color": "black"
+  }
   return (
     <Container>
       <Wrapper>
@@ -64,7 +79,7 @@ function Navbar() {
           <Language>EN</Language>
           <SearchBox>
             <InputBox></InputBox>
-            <FontAwesomeIcon icon={faSearch} />
+            <FontAwesomeIcon icon={faSearch} size='sm' />
 
           </SearchBox>
         </Left>
@@ -72,8 +87,8 @@ function Navbar() {
           <Logo>PARA.</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+         <Link style={linkStyle} to='/register'> <MenuItem>REGISTER</MenuItem></Link>
+         <Link style={linkStyle} to='/login'> <MenuItem>SIGN IN</MenuItem></Link>
         </Right>
       </Wrapper>
     </Container>
